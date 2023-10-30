@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container flex-wrap justify-content-left py-5">
+    <% if (locals.contentArray.length != 0 && locals.headerArray.length!=0){ %>
+        <div class="container d-grid gap-2 d-sm-flex justify-content-sm-center" style="margin:2rem">
+            <button type="button" onclick="location.href='/add'" class="btn btn-success">Add Blog</button>
+          </div>
+        <% for (let i = 0; i < contentArray.length; i++) {%>
+        <div>
+            <div class="container" id="content-block">
+                <h1 class="blog-header"><%= headerArray[i] %></h1>
+                <p><em>Last updated: <%= dateArray[i] %></em></p>
+                <p class="blog-content"><%= contentArray[i] %></p>
+                <div class="container" id="form-buttons">
+                    <form action="/delete" method="post" style="display: inline;">
+                        <input id="delete-button" class="btn btn-danger" type="submit" value="Delete post" onclick="return confirm('Are you sure you want to delete this post?')" name=<%= i %>>
+                    </form>
+                    <form action="/edit" method="post" style="display: inline;">
+                        <input id="edit-button" class="btn btn-primary" type="submit" value="Edit post" name=<%= i %>>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <% } } else { %>
+            <div class="px-4 py-5 my-5 text-center">
+                <img class="d-block mx-auto mb-4" src="/assets/pencil-writing-text-paper-icon-ftat-46642012.webp" alt="" width="100" height="100">
+                <h1 class="display-5 fw-bold text-body-emphasis">Welcome to Bloggy!</h1>
+                <div class="col-lg-6 mx-auto">
+                  <p class="lead mb-4">Bloggy is a passion project of a Nursing student who still lingers on the glory of her computer science days at Fulbright University Vietnam. The website runs on NodeJS on the Express web application framework and does not have a database yet, but the nursing student is still excited to showcase what she learned about Express and NodeJs to everyone she knows. </p>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" onclick="location.href='/add'" class="btn btn-primary">Add Blog</button>
+                  </div>
+                </div>
+              </div>
+    <% } %>
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>

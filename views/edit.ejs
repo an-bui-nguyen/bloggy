@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+<form action="/after-edit" method="post" id="edit-form">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-left py-3 mb-4 border-bottom">
+            <label for="blog-header" class="form-label">Edit your header here:</label>
+            <textarea class="form-control mb-3" name="blog-header" id="blog-header" rows="1"><%= blogHeader %></textarea>
+            <label for="blog-content" class="form-label">Edit your blog content here:</label>
+            <textarea class="form-control mb-3" id="blog-content" name="blog-content" rows="3" required><%= blogContent %></textarea>
+            <input class="btn btn-primary" type="submit" value="Submit" name=<%= postIndex %>>
+        </div>
+    </div>
+</form>
+
+
+
+<%- include("partials/footer.ejs") %>
