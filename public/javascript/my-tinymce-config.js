@@ -1,5 +1,5 @@
 tinymce.init({
-    selector: '#textarea-tinymce',
+    selector: 'textarea',
     plugins: [
       'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
       'searchreplace', 'wordcount', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media',
