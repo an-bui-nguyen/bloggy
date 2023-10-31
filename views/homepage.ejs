@@ -2,23 +2,23 @@
 
 <div>
     <% if (locals.contentArray.length != 0 && locals.headerArray.length!=0){ %>
-        <div class="container d-flex flex-wrap justify-content-sm-center my-5">
+        <div class="container d-flex flex-wrap justify-content-sm-center mt-5 mb-3">
             <button type="button" onclick="location.href='/add'" class="btn btn-success">Add Blog</button>
         </div>
         <% for (let i = 0; i < contentArray.length; i++) {%>
-        <div>
-            <div class="container flex-wrap justify-content-left" id="content-block">
+        <div class="container flex-wrap justify-content-left" id="content-block" style="padding: 2% 4% 2% 4%">
+            <div class="container text-container" style="padding:0%">
                 <h1 class="blog-header"><%= headerArray[i] %></h1>
                 <p><em>Last updated: <%= dateArray[i] %></em></p>
                 <p class="blog-content"><%= contentArray[i] %></p>
-                <div class="container" id="form-buttons">
-                    <form action="/delete" method="post" style="display: inline;">
-                        <input id="delete-button" class="btn btn-danger" type="submit" value="Delete post" onclick="return confirm('Are you sure you want to delete this post?')" name=<%= i %>>
-                    </form>
-                    <form action="/edit" method="post" style="display: inline;">
-                        <input id="edit-button" class="btn btn-primary" type="submit" value="Edit post" name=<%= i %>>
-                    </form>
-                </div>
+            </div>
+            <div class="container" id="form-buttons">
+                <form action="/delete" method="post" style="display: inline;">
+                    <input id="delete-button" class="btn btn-danger" type="submit" value="Delete post" onclick="return confirm('Are you sure you want to delete this post?')" name=<%= i %>>
+                </form>
+                <form action="/edit" method="post" style="display: inline;">
+                    <input id="edit-button" class="btn btn-primary" type="submit" value="Edit post" name=<%= i %>>
+                </form>
             </div>
         </div>
         <% } } else { %>

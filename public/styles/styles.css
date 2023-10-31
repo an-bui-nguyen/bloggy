@@ -14,13 +14,17 @@ body > div{
     padding-top: 1rem;
 }
 
-#content-block{
-    display:block;
-    margin-left: 7rem;
-    margin-right: 7rem;
-    padding-bottom: 3%;
+.text-container{
+    margin: 0 auto;
+    width: 50%;
+    padding:0%;
 }
 
+#content-block{
+    display:block;
+    margin: 0 auto;
+    padding-bottom: 3%;
+}
 p{
     padding-top: 1rem;
 }
