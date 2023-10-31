@@ -16,8 +16,9 @@ body > div{
 
 #content-block{
     display:block;
-    margin: 2rem;
-    padding-bottom: 1rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    padding-bottom: 3%;
 }
 
 p{

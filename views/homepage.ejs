@@ -1,13 +1,13 @@
 <%- include("partials/header.ejs") %>
 
-<div class="container flex-wrap justify-content-left py-5">
+<div>
     <% if (locals.contentArray.length != 0 && locals.headerArray.length!=0){ %>
-        <div class="container d-grid gap-2 d-sm-flex justify-content-sm-center" style="margin:2rem">
+        <div class="container d-flex flex-wrap justify-content-sm-center my-5">
             <button type="button" onclick="location.href='/add'" class="btn btn-success">Add Blog</button>
-          </div>
+        </div>
         <% for (let i = 0; i < contentArray.length; i++) {%>
         <div>
-            <div class="container" id="content-block">
+            <div class="container flex-wrap justify-content-left" id="content-block">
                 <h1 class="blog-header"><%= headerArray[i] %></h1>
                 <p><em>Last updated: <%= dateArray[i] %></em></p>
                 <p class="blog-content"><%= contentArray[i] %></p>
@@ -26,7 +26,7 @@
                 <img class="d-block mx-auto mb-4" src="/assets/pencil-writing-text-paper-icon-ftat-46642012.webp" alt="" width="100" height="100">
                 <h1 class="display-5 fw-bold text-body-emphasis">Welcome to Bloggy!</h1>
                 <div class="col-lg-6 mx-auto">
-                  <p class="lead mb-4">Bloggy is a passion project of a Nursing student who still lingers on the glory of her computer science days at Fulbright University Vietnam. The website runs on NodeJS on the Express web application framework and does not have a database yet, but the nursing student is still excited to showcase what she learned about Express and NodeJs to everyone she knows. </p>
+                  <p class="lead mb-4">Quick and dirty blog post, update, and delete functions for people who just want to vent and see their thoughts spilled all over the computer screen. Press Add Blog to get started!</p>
                   <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
                     <button type="button" onclick="location.href='/add'" class="btn btn-primary">Add Blog</button>
                   </div>

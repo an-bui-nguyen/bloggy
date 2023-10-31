@@ -32,6 +32,10 @@ app.get("/add", (req, res) => {
     res.render("add.ejs");
 })
 
+app.get("/about", (req, res) => {
+    res.render("about.ejs");
+})
+
 
 
 app.post("/edit", (req, res) => {
@@ -69,7 +73,7 @@ app.post("/after-edit", (req, res) => {
     headerArray.unshift(req.body["blog-header"]);
     contentArray.unshift(req.body["blog-content"]);
     dateArray.unshift(datetime);
-    res.render("homepage.ejs", {dateArray:dateArray, contentArray:contentArray, headerArray:headerArray});
+    res.redirect("/");
 });
 
 app.post("/delete", (req, res, event) => {
@@ -78,7 +82,7 @@ app.post("/delete", (req, res, event) => {
     headerArray.splice(indexPost, 1);
     contentArray.splice(indexPost, 1);
     dateArray.splice(indexPost, 1)
-    res.render("homepage.ejs", {dateArray:dateArray, contentArray:contentArray, headerArray:headerArray});
+    res.redirect("/");
 });
 
 app.post("/homepage", (req, res) => {
@@ -90,7 +94,7 @@ app.post("/homepage", (req, res) => {
     dateArray.unshift(datetime);
     contentArray.unshift(blogContent)
     headerArray.unshift(blogHeader);
-    res.render("homepage.ejs", {dateArray:dateArray, contentArray:contentArray, headerArray:headerArray});
+    res.redirect("/");
 });
 
 function getKeyByValue(object, value) {
